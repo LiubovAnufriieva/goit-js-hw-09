@@ -7,5 +7,5 @@ import"./assets/styles-1f19350c.js";import{S as o}from"./assets/vendor-870f0eb5.
                 alt="${i}"
                 />
             </a>
-        </li>`).join("");e.insertAdjacentHTML("beforeend",n);new o(".gallery a",{captionsData:"alt",captionDelay:250,captionClass:"text-center",captionPosition:"bottom",closeOnOverlayClick:!1});console.log(o);
+        </li>`).join("");e.insertAdjacentHTML("beforeend",n);new o(".gallery a",{captionsData:"alt",captionDelay:250,captionPosition:"bottom"});console.log(o);
 //# sourceMappingURL=commonHelpers2.js.map
