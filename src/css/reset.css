@@ -1,3 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+
+  line-height: 1.5;
+  color: #2e2f42;
+
+  font-weight: 500;
+  font-size: 16px;
+
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+  width: 360px;
+}
+
+textarea {
+  width: 360px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 /* Reset styles */
 h1,
 h2,
@@ -24,12 +63,7 @@ a {
   text-decoration: none;
 }
 
-button {
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+section {
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
