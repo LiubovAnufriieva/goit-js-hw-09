@@ -3,14 +3,6 @@ import SimpleLightbox from 'simplelightbox';
 // Додатковий імпорт стилів
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-let gallery = new SimpleLightbox('.gallery a', {
-  sourceAttr: 'data-img',
-  overlayOpacity: 0.8,
-  captionsData: 'alt',
-  captionDelay: 250,
-  captionClass: 'text-center',
-});
-
 const images = [
   {
     preview:
@@ -78,11 +70,10 @@ const images = [
 ];
 
 const galleryList = document.querySelector('ul.gallery');
-function  createImagesMarkup(arr) { 
-    return  arr
-        .map(({ preview, original, description }) => 
-            `<li class="gallery-item">
-                <a class="gallery-link" href="${original}" >
+
+const imagesMarkup = images.map(({ preview, original, description }) => `
+            <li class="gallery-item">
+                <a class="large-img" href="${original}" >
                 <img
                 class="gallery-image"
                 src="${preview}"
@@ -90,17 +81,20 @@ function  createImagesMarkup(arr) {
                 />
             </a>
         </li>`)
-        .join('')
-}
+        .join('');
 
-galleryList.insertAdjacentHTML('beforeend', createImagesMarkup(images));
+galleryList.insertAdjacentHTML('beforeend', imagesMarkup);
 
-function openModal(largeImage) {
-    const instance = SimpleLightbox.create(`
-        <img class="large-img" src="${largeImage}" alt="${largeImage.description}" width="1280">
-    `);
-    instance.show();
-}
 
+new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+    captionClass: 'text-center',
+    captionPosition: 'bottom',
+    closeOnOverlayClick: false,
+  });
 
 console.log(SimpleLightbox); // перевіряємо, чи правильно підключили бібліотеку
+
+
+
