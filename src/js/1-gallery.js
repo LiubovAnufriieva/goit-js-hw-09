@@ -21,7 +21,7 @@ const imagesMarkup = images.map(({ preview, original, description }) => `
 
 galleryList.insertAdjacentHTML('beforeend', imagesMarkup);
 
-new SimpleLightbox('.gallery a', {
+const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
     captionDelay: 250,
     captionPosition: 'bottom',
