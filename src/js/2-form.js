@@ -9,8 +9,8 @@ emailInput.addEventListener('input', onTextareaInput);
 
 function updateFormFields() {
   const formData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-  emailInput.value = formData.email ?? '';
-  textarea.value = formData.message ?? '';
+  emailInput.value = formData.email ?? "";
+  textarea.value = formData.message ?? "";
 }
 
 updateFormFields();
@@ -27,10 +27,8 @@ function onTextareaInput(event) {
 function onSubmit(event) {
   event.preventDefault();
 
-  const formData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-  
   if(!textarea.value || !emailInput.value) {
-    return 
+    return; 
   }
   console.log('send');
 
